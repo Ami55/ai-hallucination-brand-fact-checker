@@ -1,0 +1,1 @@
+const URL='https://gemini-proxy-3.vercel.app/api/brand-fact-check';export async function auditAnswer(payload:unknown){const r=await fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.error||`Request failed (${r.status})`);return d}
